@@ -108,13 +108,7 @@ public class OrdenPedidoController {
     	pagoCon.setText(Float.toString(efectivo));
     	
     	String consulta="INSERT INTO MaterialesDeCon.dbo.OrdenVenta(fecha,totalPagar)" + "values (?,?)";
-	   	 try {
-				conn = con.getConexion();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-				System.out.println("no se pudo");
-			}
+        conn = con.getConexion(); // TODO Auto-generated catch block
 	   	try {
 	   		PreparedStatement a = conn.prepareStatement(consulta);
 	   		a.setString(1, formattedString);
@@ -131,13 +125,7 @@ public class OrdenPedidoController {
     
     public void caja() {
     	String consulta="INSERT INTO MaterialesDeCon.dbo.CorteCaja(ingreso,fecha,salida)" + "values (?,?,?)";
-	   	 try {
-				conn = con.getConexion();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-				System.out.println("no se pudo");
-			}
+        conn = con.getConexion(); // TODO Auto-generated catch block
 	   	try {
 	   		PreparedStatement a = conn.prepareStatement(consulta);
 	   		a.setFloat(1, Float.parseFloat(pagoCon.getText()));

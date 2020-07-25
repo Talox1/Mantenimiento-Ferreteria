@@ -8,8 +8,9 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="MantenimientoMaterialesConstruccion.jar" size="44781" download="eager" />
+    <jar href="MantenimientoMaterialesConstruccion.jar" size="44676" download="eager" />
     <jar href="lib\jfoenix-8.0.7.jar" size="2631271" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.15-bin.jar" size="785998" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="MantenimientoMaterialesConstruccion" >
     <param name="requiredFXVersion" value="8.0+"/>

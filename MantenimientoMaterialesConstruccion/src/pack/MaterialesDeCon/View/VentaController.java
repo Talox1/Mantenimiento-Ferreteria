@@ -142,13 +142,7 @@ public class VentaController {
 	    	carito.setText(Integer.toString(contador));
 	    	
 	    	String consulta="INSERT INTO MaterialesDeCon.dbo.VentaDetalle(precio,cantidad,nombreProducto)" + "values (?,?,?)";
-	    	 try {
-				conn = con.getConexion();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-				System.out.println("no se pudo");
-			}
+                conn = con.getConexion(); // TODO Auto-generated catch block
 	    	try {
 	    		PreparedStatement a = conn.prepareStatement(consulta);
 	    		a.setFloat(1, preUni);

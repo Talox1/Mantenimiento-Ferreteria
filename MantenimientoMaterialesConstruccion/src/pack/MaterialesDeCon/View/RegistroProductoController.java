@@ -59,13 +59,7 @@ public class RegistroProductoController {
     @FXML
     private void aniadir(ActionEvent event) throws ClassNotFoundException {
     	String consulta="INSERT INTO MaterialesDeCon.dbo.Producto(nombreProducto,idProducto,idProveerdor,idCategoria,precioUnitario,existencia)" + "values (?,?,?,?,?,?)";
-    	 try {
-			conn = con.getConexion();
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-			System.out.println("no se pudo");
-		}
+        conn = con.getConexion(); // TODO Auto-generated catch block
     	try {
     		PreparedStatement a = conn.prepareStatement(consulta);
     		a.setString(1, nom.getText());
