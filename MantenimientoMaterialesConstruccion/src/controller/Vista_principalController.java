@@ -204,7 +204,7 @@ public class Vista_principalController implements Initializable {
         this.cambio = person.getCambio();
         Name.setText(person.getNombre());
         Rol.setText(person.getRol());
-        image.setImage(new Image("/img/Portada.jpg"));
+        //image.setImage(new Image("/img/Portada.jpg"));
         if(rol.equals("Admin")){            
         }else{
             Usuarios.setVisible(false);

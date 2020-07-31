@@ -18,7 +18,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="726.0" prefWidth="1062.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Vista_principalController">
    <children>
-      <AnchorPane prefHeight="152.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@../../../../../../../../../Downloads/Drapo-Dashboard-JavaFX-master/src/drapo/dashboard/style.css">
+      <AnchorPane prefHeight="152.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@style.css">
          <children>
             <Label layoutX="619.0" layoutY="20.0" prefHeight="17.0" prefWidth="57.0" text="Nombre" />
             <Label layoutX="619.0" layoutY="43.0" prefHeight="17.0" prefWidth="57.0" text="Rol" />
@@ -161,7 +161,7 @@
             </JFXButton>
          </children>
       </VBox>
-      <TableView fx:id="productosMenores" layoutX="325.0" layoutY="506.0" prefHeight="195.0" prefWidth="578.0" />
+      <TableView fx:id="productosMenores" layoutX="325.0" layoutY="375.0" prefHeight="326.0" prefWidth="674.0" />
       <Button fx:id="Cambio" layoutX="491.0" layoutY="161.0" mnemonicParsing="false" onAction="#Cambio" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #1F8FE8;" text="Cambio de caja" textFill="WHITE" />
       <TextField fx:id="Cambio_caja" layoutX="666.0" layoutY="164.0" prefHeight="26.0" prefWidth="177.0" promptText="Cambio en caja" />
       <Ellipse fill="#1f93ff00" layoutX="144.0" layoutY="83.0" radiusX="108.0" radiusY="51.0" strokeType="INSIDE">
