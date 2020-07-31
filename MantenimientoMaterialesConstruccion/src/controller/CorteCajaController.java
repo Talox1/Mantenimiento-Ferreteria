@@ -40,10 +40,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import model.Person_system;
 import model.Productos_Ven;
@@ -74,6 +78,147 @@ public class CorteCajaController implements Initializable {
     private Conexion cc = new Conexion();
     private Connection cn= cc.conexion();
     ArrayList<Productos_Ven> productos = new ArrayList<Productos_Ven>();
+    
+    String nombre;
+    String rol;
+    String user;  
+    @FXML    private Label Name;
+    @FXML    private Label Rol;
+    @FXML    private Button Usuarios;
+    @FXML    private Button reporteVen;
+    
+    @FXML
+    void Corte_caja(ActionEvent event) throws IOException {
+        
+        Stage stage = new Stage();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/CorteCaja.fxml"));
+        Object carga = loader.load();
+        Parent root = (Parent) carga;
+        Scene scene = new Scene(root);            
+        CorteCajaController controller = loader.<CorteCajaController>getController();
+        controller.informacion(person);
+        stage.setScene(scene);
+        stage.show();                                                                   
+        Stage stage1 = (Stage) VentasHistorial.getScene().getWindow();
+        stage1.close();
+
+    }
+
+    @FXML
+    void Productos(ActionEvent event) throws IOException {
+        System.out.println("Productos");
+        Stage stage = new Stage();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/Productos.fxml"));
+        Object carga = loader.load();
+        Parent root = (Parent) carga;
+        Scene scene = new Scene(root);            
+        ProductosController controller = loader.<ProductosController>getController();
+        controller.informacion(person);
+        stage.setScene(scene);
+        stage.show();                                                                   
+        Stage stage1 = (Stage) VentasHistorial.getScene().getWindow();
+        stage1.close();
+    }
+
+    @FXML
+    void Proveedores(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/Proveedores.fxml"));
+        Object carga = loader.load();
+        Parent root = (Parent) carga;
+        Scene scene = new Scene(root);            
+        ProveedoresController controller = loader.<ProveedoresController>getController();
+        controller.informacion(person);
+        stage.setScene(scene);
+        stage.show();                                                                   
+        Stage stage1 = (Stage) VentasHistorial.getScene().getWindow();
+        stage1.close();
+    }
+    
+    
+    @FXML
+    void Reporte_ventas(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/ReportesVenta.fxml"));
+        Object carga = loader.load();
+        Parent root = (Parent) carga;
+        Scene scene = new Scene(root);            
+        ReportesVentaController controller = loader.<ReportesVentaController>getController();
+        controller.informacion(person);
+        stage.setScene(scene);
+        stage.show();                                                                   
+        Stage stage1 = (Stage) VentasHistorial.getScene().getWindow();
+        stage1.close();
+    }
+
+    @FXML
+    void Usuarios(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/Usuarios.fxml"));
+        Object carga = loader.load();
+        Parent root = (Parent) carga;
+        Scene scene = new Scene(root);            
+        UsuariosController controller = loader.<UsuariosController>getController();
+        controller.informacion(person);
+        stage.setScene(scene);
+        stage.show();                                                                   
+        Stage stage1 = (Stage) VentasHistorial.getScene().getWindow();
+        stage1.close();
+    }
+
+    @FXML
+    void Ventas(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/Ventas.fxml"));
+        Object carga = loader.load();
+        Parent root = (Parent) carga;
+        Scene scene = new Scene(root);            
+        VentasController controller = loader.<VentasController>getController();
+        controller.informacion(person);
+        stage.setScene(scene);
+        stage.show();                                                                   
+        Stage stage1 = (Stage) VentasHistorial.getScene().getWindow();
+        stage1.close();
+    }
+
+    @FXML
+    void out(ActionEvent event) throws IOException {
+        Stage stage = new Stage();       
+        Alert dialogAlert2 = new Alert(Alert.AlertType.WARNING);
+        dialogAlert2.setTitle("Advertencia");
+        dialogAlert2.setContentText("Esta saliendo de la aplciación");
+        dialogAlert2.initStyle(StageStyle.UTILITY);
+        dialogAlert2.showAndWait();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/far_system/Login.fxml"));
+            Object carga = loader.load();
+            Parent root = (Parent) carga;
+            Scene scene = new Scene(root);            
+            LoginController controller = loader.<LoginController>getController();            
+            stage.setScene(scene);
+            stage.show();                                                                   
+            Stage stage1 = (Stage) VentasHistorial.getScene().getWindow();
+            stage1.close();
+        person.setNombre("");
+        person.setRol("");
+        person.setUser("");
+    }
+    
+    @FXML
+    void regresar(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/Vista_principal.fxml"));
+        Object carga = loader.load();
+        Parent root = (Parent) carga;
+        Scene scene = new Scene(root);            
+        Vista_principalController controller = loader.<Vista_principalController>getController();
+        controller.informacion(person);
+        stage.setScene(scene);
+        stage.show();                                                                   
+        Stage stage1 = (Stage) VentasHistorial.getScene().getWindow();
+        stage1.close();
+    }
+    
+    
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -82,6 +227,19 @@ public class CorteCajaController implements Initializable {
     }
     public void informacion(Person_system person){                
         this.person = person;
+        this.person = person;
+        
+        this.nombre = person.getNombre();
+        this.rol = person.getRol();
+        
+        Name.setText(person.getNombre());
+        Rol.setText(person.getRol());
+        //image.setImage(new Image("/img/Portada.jpg"));
+        if(rol.equals("Admin")){            
+        }else{
+            Usuarios.setVisible(false);
+            reporteVen.setVisible(false);
+        }
         Cambio_restante.setText(String.valueOf(person.getCambio()));
     }
     

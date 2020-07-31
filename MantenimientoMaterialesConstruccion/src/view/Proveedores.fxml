@@ -1,65 +1,233 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="568.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProveedoresController">
+<AnchorPane id="AnchorPane" prefHeight="726.0" prefWidth="1164.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProveedoresController">
    <children>
-      <Button fx:id="regresar" layoutX="755.0" layoutY="25.0" mnemonicParsing="false" onAction="#regresar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #1F8FE8; -fx-background-radius: 20;" text="Regresar" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font></Button>
-      <TableView fx:id="tablaProveedores" layoutX="18.0" layoutY="247.0" prefHeight="307.0" prefWidth="573.0" />
-      <TextField fx:id="nombreNuevoProv" layoutX="21.0" layoutY="31.0" prefHeight="26.0" prefWidth="226.0" promptText="Nombre" />
-      <TextField fx:id="telefonoNuevoProv" layoutX="275.0" layoutY="31.0" prefHeight="26.0" prefWidth="226.0" promptText="Telefono" />
-      <TextField fx:id="rfcNuevoProv" layoutX="21.0" layoutY="79.0" prefHeight="26.0" prefWidth="226.0" promptText="RFC" />
-      <Button layoutX="281.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedNuevoProveedor" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #F56000; -fx-background-radius: 20;" text="Guardar" textFill="WHITE">
+      <TableView fx:id="tablaProveedores" layoutX="290.0" layoutY="405.0" prefHeight="307.0" prefWidth="573.0" />
+      <TextField fx:id="nombreNuevoProv" layoutX="293.0" layoutY="189.0" prefHeight="26.0" prefWidth="226.0" promptText="Nombre" />
+      <TextField fx:id="telefonoNuevoProv" layoutX="547.0" layoutY="189.0" prefHeight="26.0" prefWidth="226.0" promptText="Telefono" />
+      <TextField fx:id="rfcNuevoProv" layoutX="293.0" layoutY="237.0" prefHeight="26.0" prefWidth="226.0" promptText="RFC" />
+      <Button layoutX="553.0" layoutY="221.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedNuevoProveedor" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #F56000; -fx-background-radius: 20;" text="Guardar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="verIdProv" disable="true" layoutX="634.0" layoutY="286.0" prefHeight="26.0" prefWidth="226.0" promptText="id" text="id" />
-      <TextField fx:id="verNombreProv" layoutX="634.0" layoutY="335.0" prefHeight="26.0" prefWidth="226.0" promptText="Nombre" />
-      <TextField fx:id="verTelefonoProv" layoutX="634.0" layoutY="386.0" prefHeight="26.0" prefWidth="226.0" promptText="Telefono" />
-      <TextField fx:id="verRFCProv" layoutX="634.0" layoutY="437.0" prefHeight="26.0" prefWidth="226.0" promptText="RFC" />
-      <Button layoutX="631.0" layoutY="493.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedEditar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #AC00F4; -fx-background-radius: 20;" text="Actualizar" textFill="WHITE">
+      <TextField fx:id="verIdProv" disable="true" layoutX="906.0" layoutY="444.0" prefHeight="26.0" prefWidth="226.0" promptText="id" text="id" />
+      <TextField fx:id="verNombreProv" layoutX="906.0" layoutY="493.0" prefHeight="26.0" prefWidth="226.0" promptText="Nombre" />
+      <TextField fx:id="verTelefonoProv" layoutX="906.0" layoutY="544.0" prefHeight="26.0" prefWidth="226.0" promptText="Telefono" />
+      <TextField fx:id="verRFCProv" layoutX="906.0" layoutY="595.0" prefHeight="26.0" prefWidth="226.0" promptText="RFC" />
+      <Button layoutX="903.0" layoutY="651.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedEditar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #AC00F4; -fx-background-radius: 20;" text="Actualizar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="759.0" layoutY="493.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedEliminar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #F50F00; -fx-background-radius: 20;" text="Eliminar" textFill="WHITE">
+      <Button layoutX="1031.0" layoutY="651.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedEliminar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #F50F00; -fx-background-radius: 20;" text="Eliminar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="filtroId" layoutX="22.0" layoutY="165.0" prefHeight="26.0" prefWidth="51.0" promptText="Id" />
-      <TextField fx:id="filtroNombre" layoutX="79.0" layoutY="165.0" prefHeight="26.0" prefWidth="226.0" promptText="Nombre" />
-      <TextField fx:id="fltroTelefono" layoutX="326.0" layoutY="165.0" prefHeight="26.0" prefWidth="226.0" promptText="Telefono" />
-      <TextField fx:id="filtroRfc" layoutX="21.0" layoutY="209.0" prefHeight="26.0" prefWidth="226.0" promptText="RFC" />
-      <Button layoutX="276.0" layoutY="201.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedBuscarProveedor" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #00A816; -fx-background-radius: 20;" text="Buscar" textFill="WHITE">
+      <TextField fx:id="filtroId" layoutX="294.0" layoutY="323.0" prefHeight="26.0" prefWidth="51.0" promptText="Id" />
+      <TextField fx:id="filtroNombre" layoutX="351.0" layoutY="323.0" prefHeight="26.0" prefWidth="226.0" promptText="Nombre" />
+      <TextField fx:id="fltroTelefono" layoutX="598.0" layoutY="323.0" prefHeight="26.0" prefWidth="226.0" promptText="Telefono" />
+      <TextField fx:id="filtroRfc" layoutX="293.0" layoutY="367.0" prefHeight="26.0" prefWidth="226.0" promptText="RFC" />
+      <Button layoutX="548.0" layoutY="359.0" mnemonicParsing="false" onMouseClicked="#OnMouseClickedBuscarProveedor" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #00A816; -fx-background-radius: 20;" text="Buscar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="21.0" layoutY="12.0" prefHeight="20.0" prefWidth="51.0" text="Nombre" />
-      <Label layoutX="284.0" layoutY="12.0" prefHeight="20.0" prefWidth="51.0" text="Telefono" />
-      <Label layoutX="21.0" layoutY="57.0" prefHeight="20.0" prefWidth="51.0" text="RFC" />
-      <Label layoutX="79.0" layoutY="146.0" prefHeight="20.0" prefWidth="51.0" text="Nombre" />
-      <Label layoutX="331.0" layoutY="146.0" prefHeight="20.0" prefWidth="51.0" text="Telefono" />
-      <Label layoutX="21.0" layoutY="191.0" prefHeight="20.0" prefWidth="51.0" text="RFC" />
-      <Label layoutX="24.0" layoutY="146.0" prefHeight="20.0" prefWidth="51.0" text="Id" />
-      <Label layoutX="634.0" layoutY="312.0" prefHeight="20.0" prefWidth="51.0" text="Nombre" />
-      <Label layoutX="634.0" layoutY="363.0" prefHeight="20.0" prefWidth="51.0" text="Telefono" />
-      <Label layoutX="635.0" layoutY="416.0" prefHeight="20.0" prefWidth="51.0" text="RFC" />
-      <Label layoutX="635.0" layoutY="264.0" prefHeight="20.0" prefWidth="51.0" text="Id" />
-      <Button layoutX="489.0" layoutY="203.0" mnemonicParsing="false" onMouseClicked="#OnMouseClcikedMostrarTodo" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #0086BF; -fx-background-radius: 20;" text="Mostrar todo" textFill="WHITE">
+      <Label layoutX="293.0" layoutY="170.0" prefHeight="20.0" prefWidth="51.0" text="Nombre" />
+      <Label layoutX="556.0" layoutY="170.0" prefHeight="20.0" prefWidth="51.0" text="Telefono" />
+      <Label layoutX="293.0" layoutY="215.0" prefHeight="20.0" prefWidth="51.0" text="RFC" />
+      <Label layoutX="351.0" layoutY="304.0" prefHeight="20.0" prefWidth="51.0" text="Nombre" />
+      <Label layoutX="603.0" layoutY="304.0" prefHeight="20.0" prefWidth="51.0" text="Telefono" />
+      <Label layoutX="293.0" layoutY="349.0" prefHeight="20.0" prefWidth="51.0" text="RFC" />
+      <Label layoutX="296.0" layoutY="304.0" prefHeight="20.0" prefWidth="51.0" text="Id" />
+      <Label layoutX="906.0" layoutY="470.0" prefHeight="20.0" prefWidth="51.0" text="Nombre" />
+      <Label layoutX="906.0" layoutY="521.0" prefHeight="20.0" prefWidth="51.0" text="Telefono" />
+      <Label layoutX="907.0" layoutY="574.0" prefHeight="20.0" prefWidth="51.0" text="RFC" />
+      <Label layoutX="907.0" layoutY="422.0" prefHeight="20.0" prefWidth="51.0" text="Id" />
+      <Button layoutX="761.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#OnMouseClcikedMostrarTodo" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #0086BF; -fx-background-radius: 20;" text="Mostrar todo" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
+      <AnchorPane prefHeight="152.0" prefWidth="1164.0" styleClass="head-background" stylesheets="@style.css">
+         <children>
+            <Ellipse fill="#1f93ff00" layoutX="138.0" layoutY="76.0" radiusX="108.0" radiusY="51.0" strokeType="INSIDE">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Ellipse>
+            <Label layoutX="82.0" layoutY="41.0" text="DeCon">
+               <font>
+                  <Font name="Broadway" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="74.0" text="Decoración &amp; Construcción ">
+               <font>
+                  <Font name="Bold Italic Art" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="619.0" layoutY="20.0" prefHeight="17.0" prefWidth="57.0" text="Nombre" />
+            <Label layoutX="619.0" layoutY="43.0" prefHeight="17.0" prefWidth="57.0" text="Rol" />
+            <Label fx:id="Name" layoutX="704.0" layoutY="20.0" prefHeight="18.0" prefWidth="191.0" />
+            <Label fx:id="Rol" layoutX="704.0" layoutY="43.0" prefHeight="17.0" prefWidth="104.0" />
+            <Label layoutX="619.0" layoutY="67.0" prefHeight="17.0" prefWidth="57.0" text="Fecha" textFill="WHITE" />
+            <Label fx:id="DateTime" layoutX="704.0" layoutY="67.0" prefHeight="17.0" prefWidth="208.0" textFill="WHITE" />
+            <Button layoutX="953.0" layoutY="108.0" mnemonicParsing="false" onAction="#out" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: 'red'; -fx-background-radius: 20;" text="Cerrar sesion" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <VBox layoutX="-1.0" layoutY="152.0" prefHeight="571.0" prefWidth="262.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label prefHeight="30.0" prefWidth="252.0" text="PROJECTS" textFill="#171717">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin>
+            </Label>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#regresar" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Home" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/projects.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Productos" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Productos" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/reliabilty.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Ventas" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/projections.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Proveedores" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Proveedores" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_Workflow_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Usuarios" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/agencies.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Corte_caja" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Corte de caja" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_US_Dollar_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Reporte_ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reporte de ventas" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_Share_64px.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

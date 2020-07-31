@@ -9,6 +9,7 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.jfoenix.controls.JFXButton;
 import conections.Conexion;
 import far_system.LoginController;
 import java.awt.Desktop;
@@ -101,7 +102,7 @@ public class VentasController implements Initializable {
     String user;  
     @FXML    private Label Name;
     @FXML    private Label Rol;
-    @FXML    private Button Usuarios;
+    @FXML    private JFXButton  Usuarios;
     @FXML    private Button reporteVen;
     
     @FXML
@@ -294,7 +295,7 @@ public class VentasController implements Initializable {
     }
     
     public void informacion(Person_system person){                
-        this.person = person;
+        
         this.person = person;
         
         this.nombre = person.getNombre();
