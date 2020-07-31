@@ -1,71 +1,240 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="541.0" prefWidth="885.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductosController">
+<AnchorPane id="AnchorPane" prefHeight="756.0" prefWidth="1262.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductosController">
    <children>
-    <Button fx:id="regresar" layoutX="755.0" layoutY="25.0" mnemonicParsing="false" onAction="#regresar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #1F8FE8; -fx-background-radius: 20;" text="Regresar" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font></Button>
-      <TableView fx:id="verTabla" layoutX="14.0" layoutY="207.0" prefHeight="313.0" prefWidth="573.0" />
-      <TextField fx:id="nuevoNombrePro" layoutX="14.0" layoutY="31.0" prefHeight="26.0" prefWidth="209.0" promptText="Nombre" />
-      <TextField fx:id="nuevoDescripcionPro" layoutX="246.0" layoutY="32.0" prefHeight="26.0" prefWidth="339.0" promptText="Descripcion" />
-      <TextField fx:id="nuevoCantidadPro" layoutX="14.0" layoutY="78.0" prefHeight="26.0" prefWidth="48.0" promptText="N�" />
-      <TextField fx:id="nuevoIVAPro" layoutX="78.0" layoutY="78.0" prefHeight="26.0" prefWidth="48.0" promptText="IVA" />
-      <TextField fx:id="nuevoPrecioPro" layoutX="138.0" layoutY="78.0" prefHeight="26.0" prefWidth="85.0" promptText="Precio C/U" />
-      <TextField fx:id="nuevoIDProvPro" layoutX="245.0" layoutY="78.0" prefHeight="26.0" prefWidth="109.0" promptText="id Proveedor" />
-      <Button fx:id="botonNuevo" layoutX="478.0" layoutY="72.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #F56000; -fx-background-radius: 20;" text="Guardar" textFill="WHITE">
+      <AnchorPane prefHeight="152.0" prefWidth="1262.0" styleClass="head-background" stylesheets="@style.css">
+         <children>
+            <Ellipse fill="#1f93ff00" layoutX="138.0" layoutY="76.0" radiusX="108.0" radiusY="51.0" strokeType="INSIDE">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Ellipse>
+            <Label layoutX="82.0" layoutY="41.0" text="DeCon">
+               <font>
+                  <Font name="Broadway" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="74.0" text="Decoración &amp; Construcción ">
+               <font>
+                  <Font name="Bold Italic Art" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="619.0" layoutY="20.0" prefHeight="17.0" prefWidth="57.0" text="Nombre" />
+            <Label layoutX="619.0" layoutY="43.0" prefHeight="17.0" prefWidth="57.0" text="Rol" />
+            <Label fx:id="Name" layoutX="704.0" layoutY="20.0" prefHeight="18.0" prefWidth="191.0" />
+            <Label fx:id="Rol" layoutX="704.0" layoutY="43.0" prefHeight="17.0" prefWidth="104.0" />
+            <Label layoutX="619.0" layoutY="67.0" prefHeight="17.0" prefWidth="57.0" text="Fecha" textFill="WHITE" />
+            <Label fx:id="DateTime" layoutX="704.0" layoutY="67.0" prefHeight="17.0" prefWidth="208.0" textFill="WHITE" />
+            <Button layoutX="953.0" layoutY="108.0" mnemonicParsing="false" onAction="#out" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: 'red'; -fx-background-radius: 20;" text="Cerrar sesion" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <VBox layoutY="153.0" prefHeight="571.0" prefWidth="262.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label prefHeight="30.0" prefWidth="252.0" text="PROJECTS" textFill="#171717">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin>
+            </Label>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#regresar" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Home" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/projects.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Productos" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Productos" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/reliabilty.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Ventas" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/projections.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Proveedores" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Proveedores" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_Workflow_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Usuarios" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/agencies.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Corte_caja" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Corte de caja" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_US_Dollar_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Reporte_ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reporte de ventas" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_Share_64px.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </VBox>
+      <TableView fx:id="verTabla" layoutX="366.0" layoutY="412.0" prefHeight="313.0" prefWidth="573.0" />
+      <TextField fx:id="nuevoNombrePro" layoutX="366.0" layoutY="236.0" prefHeight="26.0" prefWidth="209.0" promptText="Nombre" />
+      <TextField fx:id="nuevoDescripcionPro" layoutX="598.0" layoutY="237.0" prefHeight="26.0" prefWidth="339.0" promptText="Descripcion" />
+      <TextField fx:id="nuevoCantidadPro" layoutX="366.0" layoutY="283.0" prefHeight="26.0" prefWidth="48.0" promptText="N�" />
+      <TextField fx:id="nuevoIVAPro" layoutX="430.0" layoutY="283.0" prefHeight="26.0" prefWidth="48.0" promptText="IVA" />
+      <TextField fx:id="nuevoPrecioPro" layoutX="490.0" layoutY="283.0" prefHeight="26.0" prefWidth="85.0" promptText="Precio C/U" />
+      <TextField fx:id="nuevoIDProvPro" layoutX="597.0" layoutY="283.0" prefHeight="26.0" prefWidth="109.0" promptText="id Proveedor" />
+      <Button fx:id="botonNuevo" layoutX="830.0" layoutY="277.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #F56000; -fx-background-radius: 20;" text="Guardar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="editarIDProv" disable="true" layoutX="627.0" layoutY="182.0" prefHeight="26.0" prefWidth="226.0" promptText="id" />
-      <TextField fx:id="editarNombrePro" layoutX="627.0" layoutY="229.0" prefHeight="26.0" prefWidth="226.0" promptText="Nombre" />
-      <TextField fx:id="editarDescripcionPro" layoutX="627.0" layoutY="271.0" prefHeight="26.0" prefWidth="226.0" promptText="Descripcion" />
-      <TextField fx:id="editarCantidadPro" layoutX="627.0" layoutY="314.0" prefHeight="26.0" prefWidth="226.0" promptText="Cantidad" />
-      <TextField fx:id="editarIVAProv" layoutX="627.0" layoutY="357.0" prefHeight="26.0" prefWidth="226.0" promptText="IVA" />
-      <TextField fx:id="editarPrecioPro" layoutX="627.0" layoutY="399.0" prefHeight="26.0" prefWidth="226.0" promptText="Precio C/U" />
-      <TextField fx:id="editarIDProvePro" layoutX="627.0" layoutY="442.0" prefHeight="26.0" prefWidth="226.0" promptText="id Proveedor" />
-      <Button fx:id="botonEditar" layoutX="622.0" layoutY="482.0" mnemonicParsing="false" onAction="#editar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #AC00F4; -fx-background-radius: 20;" text="Actualizar" textFill="WHITE">
+      <TextField fx:id="editarIDProv" disable="true" layoutX="979.0" layoutY="387.0" prefHeight="26.0" prefWidth="226.0" promptText="id" />
+      <TextField fx:id="editarNombrePro" layoutX="979.0" layoutY="434.0" prefHeight="26.0" prefWidth="226.0" promptText="Nombre" />
+      <TextField fx:id="editarDescripcionPro" layoutX="979.0" layoutY="476.0" prefHeight="26.0" prefWidth="226.0" promptText="Descripcion" />
+      <TextField fx:id="editarCantidadPro" layoutX="979.0" layoutY="519.0" prefHeight="26.0" prefWidth="226.0" promptText="Cantidad" />
+      <TextField fx:id="editarIVAProv" layoutX="979.0" layoutY="562.0" prefHeight="26.0" prefWidth="226.0" promptText="IVA" />
+      <TextField fx:id="editarPrecioPro" layoutX="979.0" layoutY="604.0" prefHeight="26.0" prefWidth="226.0" promptText="Precio C/U" />
+      <TextField fx:id="editarIDProvePro" layoutX="979.0" layoutY="647.0" prefHeight="26.0" prefWidth="226.0" promptText="id Proveedor" />
+      <Button fx:id="botonEditar" layoutX="974.0" layoutY="687.0" mnemonicParsing="false" onAction="#editar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #AC00F4; -fx-background-radius: 20;" text="Actualizar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="botonEliminar" layoutX="750.0" layoutY="482.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #F50F00; -fx-background-radius: 20;" text="Eliminar" textFill="WHITE">
+      <Button fx:id="botonEliminar" layoutX="1102.0" layoutY="687.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #F50F00; -fx-background-radius: 20;" text="Eliminar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="buscarIDPro" layoutX="16.0" layoutY="124.0" prefHeight="26.0" prefWidth="44.0" promptText="id" />
-      <Button fx:id="botonBuscar" layoutX="17.0" layoutY="159.0" mnemonicParsing="false" onAction="#buscar" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #3BCA22; -fx-background-radius: 20;" text="Buscar" textFill="WHITE">
+      <TextField fx:id="buscarIDPro" layoutX="368.0" layoutY="329.0" prefHeight="26.0" prefWidth="44.0" promptText="id" />
+      <Button fx:id="botonBuscar" layoutX="369.0" layoutY="364.0" mnemonicParsing="false" onAction="#buscar" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #3BCA22; -fx-background-radius: 20;" text="Buscar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="botonMostrar" layoutX="478.0" layoutY="159.0" mnemonicParsing="false" onAction="#mostrar" onMouseClicked="#OnMouseClcikedMostrarTodo" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #0086BF; -fx-background-radius: 20;" text="Mostrar todo" textFill="WHITE">
+      <Button fx:id="botonMostrar" layoutX="830.0" layoutY="364.0" mnemonicParsing="false" onAction="#mostrar" onMouseClicked="#OnMouseClcikedMostrarTodo" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #0086BF; -fx-background-radius: 20;" text="Mostrar todo" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Text layoutX="16.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
-      <Text layoutX="16.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad" />
-      <Text layoutX="78.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IVA" />
-      <Text layoutX="246.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
-      <Text layoutX="138.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio individual" />
-      <Text layoutX="245.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Proveedor" />
-      <Text layoutX="627.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
-      <Text layoutX="627.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
-      <Text layoutX="627.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
-      <Text layoutX="627.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad" />
-      <Text layoutX="627.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IVA" />
-      <Text layoutX="627.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio individual" />
-      <Text layoutX="628.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Proveedor" />
-      <Text layoutX="17.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+      <Text layoutX="368.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+      <Text layoutX="368.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad" />
+      <Text layoutX="430.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IVA" />
+      <Text layoutX="598.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
+      <Text layoutX="490.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio individual" />
+      <Text layoutX="597.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Proveedor" />
+      <Text layoutX="979.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+      <Text layoutX="979.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+      <Text layoutX="979.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
+      <Text layoutX="979.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad" />
+      <Text layoutX="979.0" layoutY="558.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IVA" />
+      <Text layoutX="979.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio individual" />
+      <Text layoutX="980.0" layoutY="643.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Proveedor" />
+      <Text layoutX="369.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
    </children>
 </AnchorPane>
