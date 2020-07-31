@@ -19,7 +19,7 @@ public class Conexion {
             Class.forName("com.mysql.jdbc.Driver");
             
             
-            String dbName = "farmacia1";
+            String dbName = "farmacia";
             String dbUserName = "root";
             String dbPassword = "1234";
             String connectionString = "jdbc:mysql://127.0.0.1:3307/" + dbName + "?user=" + dbUserName + "&password=" + dbPassword + "&useUnicode=true&characterEncoding=UTF-8";

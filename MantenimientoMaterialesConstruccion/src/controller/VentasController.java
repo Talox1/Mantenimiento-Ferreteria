@@ -11,7 +11,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.jfoenix.controls.JFXButton;
 import conections.Conexion;
-import far_system.LoginController;
+import const_system.LoginController;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -103,11 +103,13 @@ public class VentasController implements Initializable {
     @FXML    private Label Name;
     @FXML    private Label Rol;
     @FXML    private JFXButton  Usuarios;
-    @FXML    private Button reporteVen;
+    @FXML    private JFXButton reporteVen;
+    @FXML    private Label DateTime;
     
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        DateTime.setText(Fecha());
         hora = Hora();
         visualizateData();
         visualizateData1();
@@ -216,7 +218,7 @@ public class VentasController implements Initializable {
         dialogAlert2.setContentText("Esta saliendo de la aplciación");
         dialogAlert2.initStyle(StageStyle.UTILITY);
         dialogAlert2.showAndWait();
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/far_system/Login.fxml"));
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/const_system/Login.fxml"));
             Object carga = loader.load();
             Parent root = (Parent) carga;
             Scene scene = new Scene(root);            
@@ -310,6 +312,7 @@ public class VentasController implements Initializable {
             reporteVen.setVisible(false);
         }
     }
+    
         
     @FXML
     void buscarProductos(ActionEvent event) {

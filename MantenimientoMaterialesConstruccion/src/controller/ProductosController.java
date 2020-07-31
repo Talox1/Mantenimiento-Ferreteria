@@ -5,6 +5,7 @@
  */
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -32,7 +33,8 @@ import conections.Conexion;
 import java.sql.Connection;
 
 import conections.Conexion;
-import far_system.LoginController;
+import const_system.LoginController;
+import static controller.Vista_principalController.Fecha;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -40,6 +42,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -126,10 +130,11 @@ public class ProductosController implements Initializable {
     String nombre;
     String rol;
     String user;  
+    @FXML    private Label DateTime;
     @FXML    private Label Name;
     @FXML    private Label Rol;
-    @FXML    private Button Usuarios;
-    @FXML    private Button reporteVen;
+    @FXML    private JFXButton Usuarios;
+    @FXML    private JFXButton reporteVen;
     
     @FXML
     void Corte_caja(ActionEvent event) throws IOException {
@@ -233,7 +238,7 @@ public class ProductosController implements Initializable {
         dialogAlert2.setContentText("Esta saliendo de la aplciación");
         dialogAlert2.initStyle(StageStyle.UTILITY);
         dialogAlert2.showAndWait();
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/far_system/Login.fxml"));
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/const_system/Login.fxml"));
             Object carga = loader.load();
             Parent root = (Parent) carga;
             Scene scene = new Scene(root);            
@@ -247,10 +252,15 @@ public class ProductosController implements Initializable {
         person.setUser("");
     }
 
-    
+    public static String Fecha(){
+         Date fecha = new Date();
+         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-YYYY");
+         return formato.format(fecha);                  
+     }
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        DateTime.setText(Fecha());
     	visualizateData();
     }
     

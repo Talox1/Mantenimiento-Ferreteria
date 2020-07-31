@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package far_system;
+package const_system;
 
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import conections.Conexion;
 import java.io.IOException;
@@ -46,8 +48,8 @@ import model.Person_system;
  */
 public class LoginController implements Initializable {
 
-    @FXML    private TextField user;
-    @FXML    private PasswordField password;
+    @FXML    private JFXTextField user;
+    @FXML    private JFXPasswordField password;
     @FXML    private Button sing_in;    
     @FXML    private Button out;  
     

@@ -1,22 +1,198 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="551.0" prefWidth="794.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="controller.CorteCajaController">
+<AnchorPane id="AnchorPane" prefHeight="726.0" prefWidth="1062.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CorteCajaController">
    <children>
-      <TableView fx:id="VentasHistorial" layoutX="34.0" layoutY="37.0" prefHeight="490.0" prefWidth="498.0" />
-      <Label layoutX="563.0" layoutY="37.0" text="Ventas" />
-      <TextField fx:id="totalDiaVentas" editable="false" layoutX="563.0" layoutY="78.0" prefHeight="25.0" prefWidth="200.0" />
-      <Button layoutX="563.0" layoutY="377.0" mnemonicParsing="false" onAction="#Corte" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #1ED760; -fx-background-radius: 20;" text="Corte de caja" textFill="WHITE" />
-      <Button layoutX="672.0" layoutY="453.0" mnemonicParsing="false" onAction="#Regresar" prefHeight="25.0" prefWidth="91.0" style="-fx-background-radius: 20; -fx-background-color: #0096D6;" text="Regresar" textFill="WHITE" />
-      <Label layoutX="563.0" layoutY="112.0" text="Cambio" />
-      <TextField fx:id="Cambio_restante" editable="false" layoutX="563.0" layoutY="140.0" prefHeight="25.0" prefWidth="200.0" />
-      <Label layoutX="563.0" layoutY="180.0" text="Fecha" />
-      <TextField fx:id="Fecha" editable="false" layoutX="563.0" layoutY="203.0" prefHeight="25.0" prefWidth="200.0" />
+      <AnchorPane prefHeight="152.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@style.css">
+         <children>
+            <Ellipse fill="#1f93ff00" layoutX="138.0" layoutY="76.0" radiusX="108.0" radiusY="51.0" strokeType="INSIDE">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Ellipse>
+            <Label layoutX="82.0" layoutY="41.0" text="DeCon">
+               <font>
+                  <Font name="Broadway" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="74.0" text="Decoración &amp; Construcción ">
+               <font>
+                  <Font name="Bold Italic Art" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="619.0" layoutY="20.0" prefHeight="17.0" prefWidth="57.0" text="Nombre" />
+            <Label layoutX="619.0" layoutY="43.0" prefHeight="17.0" prefWidth="57.0" text="Rol" />
+            <Label fx:id="Name" layoutX="704.0" layoutY="20.0" prefHeight="18.0" prefWidth="191.0" />
+            <Label fx:id="Rol" layoutX="704.0" layoutY="43.0" prefHeight="17.0" prefWidth="104.0" />
+            <Label layoutX="619.0" layoutY="67.0" prefHeight="17.0" prefWidth="57.0" text="Fecha" textFill="WHITE" />
+            <Label fx:id="DateTime" layoutX="704.0" layoutY="67.0" prefHeight="17.0" prefWidth="208.0" textFill="WHITE" />
+            <Button layoutX="953.0" layoutY="108.0" mnemonicParsing="false" onAction="#out" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: 'red'; -fx-background-radius: 20;" text="Cerrar sesion" textFill="WHITE" />
+            <Label layoutX="322.0" layoutY="84.0" prefHeight="53.0" prefWidth="283.0" text="Corte de caja">
+               <font>
+                  <Font name="Broadway" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="-1.0" layoutY="152.0" prefHeight="571.0" prefWidth="262.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label prefHeight="30.0" prefWidth="252.0" text="PROJECTS" textFill="#171717">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin>
+            </Label>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Regresar" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Home" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/projects.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Productos" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Productos" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/reliabilty.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Ventas" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/projections.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Proveedores" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Proveedores" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_Workflow_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Corte_caja" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Corte de caja" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_US_Dollar_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="Usuarios" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Usuarios" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/agencies.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="reporteVen" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Reporte_ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reporte de ventas" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_Share_64px.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </VBox>
+      <TableView fx:id="VentasHistorial" layoutX="298.0" layoutY="203.0" prefHeight="490.0" prefWidth="498.0" />
+      <Label layoutX="827.0" layoutY="203.0" text="Ventas" />
+      <TextField fx:id="totalDiaVentas" editable="false" layoutX="827.0" layoutY="244.0" prefHeight="25.0" prefWidth="200.0" />
+      <Button layoutX="827.0" layoutY="543.0" mnemonicParsing="false" onAction="#Corte" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #1ED760; -fx-background-radius: 20;" text="Corte de caja" textFill="WHITE" />
+      <Label layoutX="827.0" layoutY="278.0" text="Cambio" />
+      <TextField fx:id="Cambio_restante" editable="false" layoutX="827.0" layoutY="306.0" prefHeight="25.0" prefWidth="200.0" />
+      <Label layoutX="827.0" layoutY="346.0" text="Fecha" />
+      <TextField fx:id="Fecha" editable="false" layoutX="827.0" layoutY="369.0" prefHeight="25.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

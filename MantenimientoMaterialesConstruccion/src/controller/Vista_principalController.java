@@ -5,8 +5,9 @@
  */
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import conections.Conexion;
-import far_system.LoginController;
+import const_system.LoginController;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -53,10 +54,10 @@ public class Vista_principalController implements Initializable {
     @FXML    private Label Name;
     @FXML    private Label Rol;
     @FXML    private Button Productos;
-    @FXML    private Button Usuarios;
+    @FXML    private JFXButton  Usuarios;
     @FXML    private Button Provedores;
     @FXML    private Button Ventas;
-    @FXML    private Button reporteVen;
+    @FXML    private JFXButton reporteVen;
     @FXML    private Button Corte;
     @FXML    private Button Cambio;
     @FXML    private TextField Cambio_caja;
@@ -185,7 +186,7 @@ public class Vista_principalController implements Initializable {
         dialogAlert2.setContentText("Esta saliendo de la aplciación");
         dialogAlert2.initStyle(StageStyle.UTILITY);
         dialogAlert2.showAndWait();
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/far_system/Login.fxml"));
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/const_system/Login.fxml"));
             Object carga = loader.load();
             Parent root = (Parent) carga;
             Scene scene = new Scene(root);            

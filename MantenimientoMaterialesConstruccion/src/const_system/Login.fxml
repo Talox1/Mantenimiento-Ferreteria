@@ -1,15 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="334.0" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="far_system.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="800.0" style="-fx-background-color: #247AA6; -fx-border-color: White;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="far_system.LoginController">
    <children>
-      <TextField fx:id="user" layoutX="50.0" layoutY="132.0" prefHeight="26.0" prefWidth="220.0" promptText="Usuario" />
-      <PasswordField fx:id="password" layoutX="50.0" layoutY="185.0" prefHeight="26.0" prefWidth="220.0" promptText="Contraseña" />
-      <Button fx:id="sing_in" layoutX="177.0" layoutY="256.0" mnemonicParsing="false" onAction="#sign_in" onKeyPressed="#sign_in" prefHeight="32.0" prefWidth="91.0" style="-fx-background-radius: 20; -fx-background-color: #1F8FE8;" text="Entrar" textFill="WHITE" />
-      <Button fx:id="out" layoutX="51.0" layoutY="256.0" mnemonicParsing="false" onAction="#out" prefHeight="32.0" prefWidth="91.0" style="-fx-background-radius: 20; -fx-background-color: 'red';" text="Salir" textFill="WHITE" />
+      <Label layoutX="240.0" layoutY="37.0" text="DeCon">
+         <font>
+            <Font name="Broadway" size="80.0" />
+         </font>
+      </Label>
+      <Label layoutX="244.0" layoutY="114.0" text="Decoración &amp; Construcción ">
+         <font>
+            <Font name="Bold Italic Art" size="24.0" />
+         </font>
+      </Label>
+      <Ellipse fill="#1f93ff00" layoutX="406.0" layoutY="114.0" radiusX="266.0" radiusY="89.0" strokeType="INSIDE" strokeWidth="3.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Ellipse>
+      <Button fx:id="sing_in" layoutX="448.0" layoutY="709.0" mnemonicParsing="false" onAction="#sign_in" onKeyPressed="#sign_in" prefHeight="62.0" prefWidth="168.0" style="-fx-background-radius: 20; -fx-background-color: #1F8FE8;" text="Entrar" textFill="WHITE" />
+      <Button fx:id="out" layoutX="180.0" layoutY="709.0" mnemonicParsing="false" onAction="#out" prefHeight="62.0" prefWidth="168.0" style="-fx-background-radius: 20; -fx-background-color: 'red';" text="Salir" textFill="WHITE" />
+      <JFXTextField fx:id="user" layoutX="211.0" layoutY="363.0" prefHeight="91.0" prefWidth="391.0" promptText="Usuario">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="244.0" layoutY="254.0" text="Iniciar Sesión" textAlignment="CENTER">
+         <font>
+            <Font name="Tahoma Bold" size="46.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dbff2a" height="16.0" layoutX="269.0" layoutY="312.0" stroke="#dbff2a" strokeType="INSIDE" width="268.0" />
+      <JFXPasswordField fx:id="password" layoutX="211.0" layoutY="513.0" prefHeight="91.0" prefWidth="391.0" promptText="Password">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXPasswordField>
    </children>
 </AnchorPane>

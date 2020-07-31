@@ -5,8 +5,10 @@
  */
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import conections.Conexion;
-import far_system.LoginController;
+import const_system.LoginController;
+import static controller.Vista_principalController.Fecha;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -14,6 +16,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -94,14 +98,19 @@ public class ProveedoresController implements Initializable {
     String user;  
     @FXML    private Label Name;
     @FXML    private Label Rol;
-    @FXML    private Button Usuarios;
-    @FXML    private Button reporteVen;
-    
+    @FXML    private JFXButton Usuarios;
+    @FXML    private JFXButton reporteVen;
+    @FXML    private Label DateTime;
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
+        DateTime.setText(Fecha());
         visualizateData();
     }
-    
+    public static String Fecha(){
+         Date fecha = new Date();
+         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-YYYY");
+         return formato.format(fecha);                  
+     }
     @FXML
     void Corte_caja(ActionEvent event) throws IOException {
         
@@ -204,7 +213,7 @@ public class ProveedoresController implements Initializable {
         dialogAlert2.setContentText("Esta saliendo de la aplciación");
         dialogAlert2.initStyle(StageStyle.UTILITY);
         dialogAlert2.showAndWait();
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/far_system/Login.fxml"));
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/const_system/Login.fxml"));
             Object carga = loader.load();
             Parent root = (Parent) carga;
             Scene scene = new Scene(root);            
@@ -471,6 +480,7 @@ public class ProveedoresController implements Initializable {
         //image.setImage(new Image("/img/Portada.jpg"));
         if(rol.equals("Admin")){            
         }else{
+            System.out.println("rol"+rol);
             Usuarios.setVisible(false);
             reporteVen.setVisible(false);
         }

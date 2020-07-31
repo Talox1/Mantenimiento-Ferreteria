@@ -48,6 +48,11 @@
             <Label layoutX="619.0" layoutY="67.0" prefHeight="17.0" prefWidth="57.0" text="Fecha" textFill="WHITE" />
             <Label fx:id="DateTime" layoutX="704.0" layoutY="67.0" prefHeight="17.0" prefWidth="208.0" textFill="WHITE" />
             <Button layoutX="953.0" layoutY="108.0" mnemonicParsing="false" onAction="#out" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: 'red'; -fx-background-radius: 20;" text="Cerrar sesion" textFill="WHITE" />
+            <Label layoutX="365.0" layoutY="97.0" prefHeight="53.0" prefWidth="216.0" text="Productos">
+               <font>
+                  <Font name="Broadway" size="33.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <VBox layoutY="153.0" prefHeight="571.0" prefWidth="262.0" style="-fx-background-color: #fff;">
@@ -132,21 +137,6 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Usuarios" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/agencies.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
             <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Corte_caja" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Corte de caja" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
@@ -162,7 +152,22 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Reporte_ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reporte de ventas" textFill="#5b5858">
+            <JFXButton fx:id="Usuarios" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Usuarios" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/agencies.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="reporteVen" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Reporte_ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reporte de ventas" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
@@ -183,9 +188,9 @@
          </children>
       </VBox>
       <TableView fx:id="verTabla" layoutX="366.0" layoutY="412.0" prefHeight="313.0" prefWidth="573.0" />
-      <TextField fx:id="nuevoNombrePro" layoutX="366.0" layoutY="236.0" prefHeight="26.0" prefWidth="209.0" promptText="Nombre" />
+      <TextField fx:id="nuevoNombrePro" layoutX="368.0" layoutY="236.0" prefHeight="26.0" prefWidth="209.0" promptText="Nombre" />
       <TextField fx:id="nuevoDescripcionPro" layoutX="598.0" layoutY="237.0" prefHeight="26.0" prefWidth="339.0" promptText="Descripcion" />
-      <TextField fx:id="nuevoCantidadPro" layoutX="366.0" layoutY="283.0" prefHeight="26.0" prefWidth="48.0" promptText="N�" />
+      <TextField fx:id="nuevoCantidadPro" layoutX="368.0" layoutY="283.0" prefHeight="26.0" prefWidth="48.0" promptText="N�" />
       <TextField fx:id="nuevoIVAPro" layoutX="430.0" layoutY="283.0" prefHeight="26.0" prefWidth="48.0" promptText="IVA" />
       <TextField fx:id="nuevoPrecioPro" layoutX="490.0" layoutY="283.0" prefHeight="26.0" prefWidth="85.0" promptText="Precio C/U" />
       <TextField fx:id="nuevoIDProvPro" layoutX="597.0" layoutY="283.0" prefHeight="26.0" prefWidth="109.0" promptText="id Proveedor" />
@@ -222,8 +227,8 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Text layoutX="368.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
-      <Text layoutX="368.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad" />
+      <Text layoutX="368.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+      <Text layoutX="368.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad" />
       <Text layoutX="430.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IVA" />
       <Text layoutX="598.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
       <Text layoutX="490.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio individual" />
@@ -235,6 +240,6 @@
       <Text layoutX="979.0" layoutY="558.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IVA" />
       <Text layoutX="979.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio individual" />
       <Text layoutX="980.0" layoutY="643.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Proveedor" />
-      <Text layoutX="369.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+      <Text layoutX="368.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
    </children>
 </AnchorPane>

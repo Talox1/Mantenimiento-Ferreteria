@@ -47,6 +47,11 @@
             <Label layoutX="619.0" layoutY="67.0" prefHeight="17.0" prefWidth="57.0" text="Fecha" textFill="WHITE" />
             <Label fx:id="DateTime" layoutX="704.0" layoutY="67.0" prefHeight="17.0" prefWidth="208.0" textFill="WHITE" />
             <Button layoutX="953.0" layoutY="108.0" mnemonicParsing="false" onAction="#out" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: 'red'; -fx-background-radius: 20;" text="Cerrar sesion" textFill="WHITE" />
+            <Label layoutX="268.0" layoutY="97.0" prefHeight="53.0" prefWidth="216.0" text="Ventas">
+               <font>
+                  <Font name="Broadway" size="33.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <VBox layoutX="-1.0" layoutY="152.0" prefHeight="571.0" prefWidth="262.0" style="-fx-background-color: #fff;">
@@ -131,21 +136,6 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Usuarios" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/agencies.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
             <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Corte_caja" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Corte de caja" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
@@ -161,7 +151,22 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Reporte_ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reporte de ventas" textFill="#5b5858">
+            <JFXButton fx:id="Usuarios" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Usuarios" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/agencies.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="regresar" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Reporte_ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reporte de ventas" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
