@@ -17,12 +17,19 @@ public class Conexion {
     public Connection conexion(){        
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            conectar = DriverManager.getConnection("jdbc:mysql://localhost/farmacia","root","");
+            
+            
+            String dbName = "farmacia1";
+            String dbUserName = "root";
+            String dbPassword = "1234";
+            String connectionString = "jdbc:mysql://127.0.0.1:3307/" + dbName + "?user=" + dbUserName + "&password=" + dbPassword + "&useUnicode=true&characterEncoding=UTF-8";
+            
+            conectar = DriverManager.getConnection(connectionString);
             System.out.println("conectado");
             //JOptionPane.showMessageDialog(null,"conectado");
         }catch(Exception e){
             System.out.print(e.getMessage() + " : " + e.getCause());
-            System.err.println("\nNo conectado");
+            System.err.println("\nNo conectado...");
             //JOptionPane.showMessageDialog(null,"  No conectado");
         }
         return conectar;

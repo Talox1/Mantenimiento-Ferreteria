@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="334.0" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="far_system.LoginController">
+   <children>
+      <TextField fx:id="user" layoutX="50.0" layoutY="132.0" prefHeight="26.0" prefWidth="220.0" promptText="Usuario" />
+      <PasswordField fx:id="password" layoutX="50.0" layoutY="185.0" prefHeight="26.0" prefWidth="220.0" promptText="Contraseña" />
+      <Button fx:id="sing_in" layoutX="177.0" layoutY="256.0" mnemonicParsing="false" onAction="#sign_in" onKeyPressed="#sign_in" prefHeight="32.0" prefWidth="91.0" style="-fx-background-radius: 20; -fx-background-color: #1F8FE8;" text="Entrar" textFill="WHITE" />
+      <Button fx:id="out" layoutX="51.0" layoutY="256.0" mnemonicParsing="false" onAction="#out" prefHeight="32.0" prefWidth="91.0" style="-fx-background-radius: 20; -fx-background-color: 'red';" text="Salir" textFill="WHITE" />
+   </children>
+</AnchorPane>

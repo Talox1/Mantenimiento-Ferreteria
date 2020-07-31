@@ -1,247 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="723.0" prefWidth="1281.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductosController">
+<AnchorPane id="AnchorPane" prefHeight="541.0" prefWidth="885.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductosController">
    <children>
-    <Button fx:id="regresar" layoutX="1002.0" layoutY="243.0" mnemonicParsing="false" onAction="#regresar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #1F8FE8; -fx-background-radius: 20;" text="Regresar" textFill="WHITE">
+    <Button fx:id="regresar" layoutX="755.0" layoutY="25.0" mnemonicParsing="false" onAction="#regresar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #1F8FE8; -fx-background-radius: 20;" text="Regresar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <TableView fx:id="verTabla" layoutX="261.0" layoutY="425.0" prefHeight="313.0" prefWidth="573.0" />
-      <TextField fx:id="nuevoNombrePro" layoutX="261.0" layoutY="249.0" prefHeight="26.0" prefWidth="209.0" promptText="Nombre" />
-      <TextField fx:id="nuevoDescripcionPro" layoutX="493.0" layoutY="250.0" prefHeight="26.0" prefWidth="339.0" promptText="Descripcion" />
-      <TextField fx:id="nuevoCantidadPro" layoutX="261.0" layoutY="296.0" prefHeight="26.0" prefWidth="48.0" promptText="N�" />
-      <TextField fx:id="nuevoIVAPro" layoutX="325.0" layoutY="296.0" prefHeight="26.0" prefWidth="48.0" promptText="IVA" />
-      <TextField fx:id="nuevoPrecioPro" layoutX="385.0" layoutY="296.0" prefHeight="26.0" prefWidth="85.0" promptText="Precio C/U" />
-      <TextField fx:id="nuevoIDProvPro" layoutX="492.0" layoutY="296.0" prefHeight="26.0" prefWidth="109.0" promptText="id Proveedor" />
-      <Button fx:id="botonNuevo" layoutX="725.0" layoutY="290.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #F56000; -fx-background-radius: 20;" text="Guardar" textFill="WHITE">
+      <TableView fx:id="verTabla" layoutX="14.0" layoutY="207.0" prefHeight="313.0" prefWidth="573.0" />
+      <TextField fx:id="nuevoNombrePro" layoutX="14.0" layoutY="31.0" prefHeight="26.0" prefWidth="209.0" promptText="Nombre" />
+      <TextField fx:id="nuevoDescripcionPro" layoutX="246.0" layoutY="32.0" prefHeight="26.0" prefWidth="339.0" promptText="Descripcion" />
+      <TextField fx:id="nuevoCantidadPro" layoutX="14.0" layoutY="78.0" prefHeight="26.0" prefWidth="48.0" promptText="N�" />
+      <TextField fx:id="nuevoIVAPro" layoutX="78.0" layoutY="78.0" prefHeight="26.0" prefWidth="48.0" promptText="IVA" />
+      <TextField fx:id="nuevoPrecioPro" layoutX="138.0" layoutY="78.0" prefHeight="26.0" prefWidth="85.0" promptText="Precio C/U" />
+      <TextField fx:id="nuevoIDProvPro" layoutX="245.0" layoutY="78.0" prefHeight="26.0" prefWidth="109.0" promptText="id Proveedor" />
+      <Button fx:id="botonNuevo" layoutX="478.0" layoutY="72.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #F56000; -fx-background-radius: 20;" text="Guardar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="editarIDProv" disable="true" layoutX="874.0" layoutY="400.0" prefHeight="26.0" prefWidth="226.0" promptText="id" />
-      <TextField fx:id="editarNombrePro" layoutX="874.0" layoutY="447.0" prefHeight="26.0" prefWidth="226.0" promptText="Nombre" />
-      <TextField fx:id="editarDescripcionPro" layoutX="874.0" layoutY="489.0" prefHeight="26.0" prefWidth="226.0" promptText="Descripcion" />
-      <TextField fx:id="editarCantidadPro" layoutX="874.0" layoutY="532.0" prefHeight="26.0" prefWidth="226.0" promptText="Cantidad" />
-      <TextField fx:id="editarIVAProv" layoutX="874.0" layoutY="575.0" prefHeight="26.0" prefWidth="226.0" promptText="IVA" />
-      <TextField fx:id="editarPrecioPro" layoutX="874.0" layoutY="617.0" prefHeight="26.0" prefWidth="226.0" promptText="Precio C/U" />
-      <TextField fx:id="editarIDProvePro" layoutX="874.0" layoutY="660.0" prefHeight="26.0" prefWidth="226.0" promptText="id Proveedor" />
-      <Button fx:id="botonEditar" layoutX="869.0" layoutY="700.0" mnemonicParsing="false" onAction="#editar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #AC00F4; -fx-background-radius: 20;" text="Actualizar" textFill="WHITE">
+      <TextField fx:id="editarIDProv" disable="true" layoutX="627.0" layoutY="182.0" prefHeight="26.0" prefWidth="226.0" promptText="id" />
+      <TextField fx:id="editarNombrePro" layoutX="627.0" layoutY="229.0" prefHeight="26.0" prefWidth="226.0" promptText="Nombre" />
+      <TextField fx:id="editarDescripcionPro" layoutX="627.0" layoutY="271.0" prefHeight="26.0" prefWidth="226.0" promptText="Descripcion" />
+      <TextField fx:id="editarCantidadPro" layoutX="627.0" layoutY="314.0" prefHeight="26.0" prefWidth="226.0" promptText="Cantidad" />
+      <TextField fx:id="editarIVAProv" layoutX="627.0" layoutY="357.0" prefHeight="26.0" prefWidth="226.0" promptText="IVA" />
+      <TextField fx:id="editarPrecioPro" layoutX="627.0" layoutY="399.0" prefHeight="26.0" prefWidth="226.0" promptText="Precio C/U" />
+      <TextField fx:id="editarIDProvePro" layoutX="627.0" layoutY="442.0" prefHeight="26.0" prefWidth="226.0" promptText="id Proveedor" />
+      <Button fx:id="botonEditar" layoutX="622.0" layoutY="482.0" mnemonicParsing="false" onAction="#editar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #AC00F4; -fx-background-radius: 20;" text="Actualizar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="botonEliminar" layoutX="997.0" layoutY="700.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #F50F00; -fx-background-radius: 20;" text="Eliminar" textFill="WHITE">
+      <Button fx:id="botonEliminar" layoutX="750.0" layoutY="482.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #F50F00; -fx-background-radius: 20;" text="Eliminar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="buscarIDPro" layoutX="263.0" layoutY="342.0" prefHeight="26.0" prefWidth="44.0" promptText="id" />
-      <Button fx:id="botonBuscar" layoutX="264.0" layoutY="377.0" mnemonicParsing="false" onAction="#buscar" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #3BCA22; -fx-background-radius: 20;" text="Buscar" textFill="WHITE">
+      <TextField fx:id="buscarIDPro" layoutX="16.0" layoutY="124.0" prefHeight="26.0" prefWidth="44.0" promptText="id" />
+      <Button fx:id="botonBuscar" layoutX="17.0" layoutY="159.0" mnemonicParsing="false" onAction="#buscar" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #3BCA22; -fx-background-radius: 20;" text="Buscar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="botonMostrar" layoutX="725.0" layoutY="377.0" mnemonicParsing="false" onAction="#mostrar" onMouseClicked="#OnMouseClcikedMostrarTodo" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #0086BF; -fx-background-radius: 20;" text="Mostrar todo" textFill="WHITE">
+      <Button fx:id="botonMostrar" layoutX="478.0" layoutY="159.0" mnemonicParsing="false" onAction="#mostrar" onMouseClicked="#OnMouseClcikedMostrarTodo" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #0086BF; -fx-background-radius: 20;" text="Mostrar todo" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Text layoutX="263.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
-      <Text layoutX="263.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad" />
-      <Text layoutX="325.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IVA" />
-      <Text layoutX="493.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
-      <Text layoutX="385.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio individual" />
-      <Text layoutX="492.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Proveedor" />
-      <Text layoutX="874.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
-      <Text layoutX="874.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
-      <Text layoutX="874.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
-      <Text layoutX="874.0" layoutY="528.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad" />
-      <Text layoutX="874.0" layoutY="571.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IVA" />
-      <Text layoutX="874.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio individual" />
-      <Text layoutX="875.0" layoutY="656.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Proveedor" />
-      <Text layoutX="264.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
-      <Pane prefHeight="163.0" prefWidth="1281.0" styleClass="head-background" stylesheets="@../../../../../Downloads/Drapo-Dashboard-JavaFX-master/Drapo-Dashboard-JavaFX-master/src/drapo/dashboard/style.css">
-         <children>
-            <JFXButton layoutX="1104.0" layoutY="26.0" nodeOrientation="RIGHT_TO_LEFT" onAction="#out" prefHeight="30.0" prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #473E98;" text="Cerrar Sesion" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </JFXButton>
-            <Ellipse fill="#1f93ff00" layoutX="417.0" layoutY="75.0" radiusX="192.0" radiusY="66.0" strokeType="INSIDE" strokeWidth="3.0">
-               <stroke>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="BLACK" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </stroke>
-            </Ellipse>
-            <Label layoutX="291.0" layoutY="29.0" prefHeight="59.0" prefWidth="297.0" text="DeCon">
-               <font>
-                  <Font name="Broadway" size="64.0" />
-               </font>
-            </Label>
-            <Label layoutX="269.0" layoutY="86.0" text="Decoración &amp; Construcción ">
-               <font>
-                  <Font name="Bold Italic Art" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="736.0" layoutY="24.0" prefHeight="17.0" prefWidth="57.0" text="Nombre" />
-            <Label layoutX="734.0" layoutY="68.0" prefHeight="17.0" prefWidth="34.0" text="Rol" />
-            <Label fx:id="Name" layoutX="844.0" layoutY="24.0" prefHeight="18.0" prefWidth="191.0" />
-            <Label layoutX="734.0" layoutY="115.0" prefHeight="17.0" prefWidth="149.0" text="Fecha" textFill="WHITE" />
-            <Label fx:id="DateTime" layoutX="846.0" layoutY="113.0" prefHeight="17.0" prefWidth="208.0" textFill="WHITE" />
-            <Label fx:id="Rol" layoutX="844.0" layoutY="67.0" prefHeight="17.0" prefWidth="104.0" />
-         </children>
-      </Pane>
-      <VBox layoutY="165.0" prefHeight="591.0" prefWidth="252.0" style="-fx-background-color: #fff;">
-         <children>
-            <Label prefHeight="30.0" prefWidth="252.0" text="Menu" textFill="#171717">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <padding>
-                  <Insets left="40.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets top="60.0" />
-               </VBox.margin>
-            </Label>
-            <JFXButton fx:id="Productos" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Productos" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Productos" textFill="#5b5858">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../Downloads/Drapo-Dashboard-JavaFX-master/Drapo-Dashboard-JavaFX-master/src/drapo/dashboard/images/projects.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton fx:id="Ventas" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Ventas" textFill="#5b5858">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../Downloads/Drapo-Dashboard-JavaFX-master/Drapo-Dashboard-JavaFX-master/src/drapo/dashboard/images/reliabilty.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton fx:id="Provedores" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Proveedores" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Proveedores" textFill="#5b5858">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../Downloads/Drapo-Dashboard-JavaFX-master/Drapo-Dashboard-JavaFX-master/src/drapo/dashboard/images/projections.png" />
-                     </image>
-                     <viewport>
-                        <Rectangle2D />
-                     </viewport>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton fx:id="Usuarios" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Usuarios" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../Downloads/Drapo-Dashboard-JavaFX-master/Drapo-Dashboard-JavaFX-master/src/drapo/dashboard/images/icons8_Workflow_64px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton fx:id="Corte" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Corte_caja" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Corte de caja" textFill="#5b5858">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../Downloads/Drapo-Dashboard-JavaFX-master/Drapo-Dashboard-JavaFX-master/src/drapo/dashboard/images/icons8_US_Dollar_64px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton fx:id="reporteVen" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Reporte_ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reporte de ventas" textFill="#5b5858">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../Downloads/Drapo-Dashboard-JavaFX-master/Drapo-Dashboard-JavaFX-master/src/drapo/dashboard/images/icons8_Share_64px.png" />
-                     </image>
-                     <viewport>
-                        <Rectangle2D />
-                     </viewport>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-         </children>
-      </VBox>
-      <Pane layoutX="71.0" layoutY="44.0" prefHeight="131.0" prefWidth="142.0" style="-fx-background-color: #fff;">
-         <children>
-            <ImageView fitHeight="120.0" fitWidth="139.0" layoutX="11.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../Downloads/Drapo-Dashboard-JavaFX-master/Drapo-Dashboard-JavaFX-master/src/drapo/dashboard/images/logo.png" />
-               </image>
-            </ImageView>
-         </children>
-         <effect>
-            <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
-         </effect>
-      </Pane>
+      <Text layoutX="16.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+      <Text layoutX="16.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad" />
+      <Text layoutX="78.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IVA" />
+      <Text layoutX="246.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
+      <Text layoutX="138.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio individual" />
+      <Text layoutX="245.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Proveedor" />
+      <Text layoutX="627.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+      <Text layoutX="627.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+      <Text layoutX="627.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
+      <Text layoutX="627.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad" />
+      <Text layoutX="627.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IVA" />
+      <Text layoutX="627.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio individual" />
+      <Text layoutX="628.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Proveedor" />
+      <Text layoutX="17.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
    </children>
 </AnchorPane>
