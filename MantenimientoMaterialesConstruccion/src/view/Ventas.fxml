@@ -1,37 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1038.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VentasController">
+<AnchorPane id="AnchorPane" prefHeight="749.0" prefWidth="1267.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VentasController">
    <children>
-      <Button fx:id="regresar" layoutX="935.0" layoutY="39.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #1F8FE8; -fx-background-radius: 20;" text="Regresar" textFill="WHITE" />
-      <TableView fx:id="ProductosVenta" layoutX="30.0" layoutY="164.0" prefHeight="456.0" prefWidth="370.0" />
-      <TextField fx:id="productoBuscar" layoutX="30.0" layoutY="115.0" prefHeight="25.0" prefWidth="211.0" promptText="Nombre del producto" />
-      <Button layoutX="317.0" layoutY="115.0" mnemonicParsing="false" onAction="#buscarProductos" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #1F8FE8; -fx-background-radius: 20;" text="Buscar" textFill="WHITE" />
-      <TableView fx:id="productoVenta" layoutX="443.0" layoutY="164.0" prefHeight="353.0" prefWidth="577.0" />
-      <TextField fx:id="iva" editable="false" layoutX="507.0" layoutY="544.0" prefHeight="25.0" prefWidth="101.0" />
-      <TextField fx:id="subtotal" editable="false" layoutX="711.0" layoutY="544.0" prefHeight="25.0" prefWidth="112.0" />
-      <Label layoutX="451.0" layoutY="548.0" prefHeight="17.0" prefWidth="41.0" text="IVA" />
-      <Label layoutX="625.0" layoutY="548.0" text="SUBTOTAL" />
-      <Label layoutX="847.0" layoutY="548.0" text="TOTAL" />
-      <TextField fx:id="total" editable="false" layoutX="900.0" layoutY="544.0" prefHeight="25.0" prefWidth="112.0" />
-      <Button layoutX="908.0" layoutY="595.0" mnemonicParsing="false" onAction="#generarCompra" style="-fx-background-color: #1F8FE8; -fx-background-radius: 20;" text="Generar Compra" textFill="WHITE" />
-      <TextField fx:id="productoVender" editable="false" layoutX="519.0" layoutY="115.0" prefHeight="25.0" prefWidth="112.0" />
-      <TextField fx:id="cantidadVender" layoutX="732.0" layoutY="115.0" prefHeight="25.0" prefWidth="112.0" />
-      <Button layoutX="901.0" layoutY="115.0" mnemonicParsing="false" onAction="#ingresarProductosVender" style="-fx-background-color: #1F8FE8; -fx-background-radius: 20;" text="Ingresar Producto" textFill="WHITE" />
-      <Label layoutX="451.0" layoutY="119.0" text="Producto" />
-      <Label layoutX="654.0" layoutY="119.0" text="Cantidad" />
-      <Label layoutX="443.0" layoutY="596.0" text="Cambio" />
-      <TextField fx:id="cambioVenta" layoutX="507.0" layoutY="592.0" prefHeight="25.0" prefWidth="101.0" />
-      <TextField fx:id="precioUniVender" editable="false" layoutX="519.0" layoutY="71.0" prefHeight="25.0" prefWidth="112.0" visible="false" />
-      <TextField fx:id="Descripcionvender" editable="false" layoutX="732.0" layoutY="71.0" prefHeight="25.0" prefWidth="112.0" visible="false" />
-      <TextField fx:id="idVender" editable="false" layoutX="645.0" layoutY="71.0" prefHeight="25.0" prefWidth="67.0" visible="false" />
-      <TextField fx:id="devoluciónVenta" editable="false" layoutX="711.0" layoutY="592.0" prefHeight="25.0" prefWidth="112.0" />
-      <Label layoutX="625.0" layoutY="596.0" text="Devolución" />
-      <TextField fx:id="cantidadProductoVenta" editable="false" layoutX="483.0" layoutY="39.0" visible="false" />
+      <AnchorPane prefHeight="152.0" prefWidth="1267.0" styleClass="head-background" stylesheets="@style.css">
+         <children>
+            <Ellipse fill="#1f93ff00" layoutX="138.0" layoutY="76.0" radiusX="108.0" radiusY="51.0" strokeType="INSIDE">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Ellipse>
+            <Label layoutX="82.0" layoutY="41.0" text="DeCon">
+               <font>
+                  <Font name="Broadway" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="74.0" text="Decoración &amp; Construcción ">
+               <font>
+                  <Font name="Bold Italic Art" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="619.0" layoutY="20.0" prefHeight="17.0" prefWidth="57.0" text="Nombre" />
+            <Label layoutX="619.0" layoutY="43.0" prefHeight="17.0" prefWidth="57.0" text="Rol" />
+            <Label fx:id="Name" layoutX="704.0" layoutY="20.0" prefHeight="18.0" prefWidth="191.0" />
+            <Label fx:id="Rol" layoutX="704.0" layoutY="43.0" prefHeight="17.0" prefWidth="104.0" />
+            <Label layoutX="619.0" layoutY="67.0" prefHeight="17.0" prefWidth="57.0" text="Fecha" textFill="WHITE" />
+            <Label fx:id="DateTime" layoutX="704.0" layoutY="67.0" prefHeight="17.0" prefWidth="208.0" textFill="WHITE" />
+            <Button layoutX="953.0" layoutY="108.0" mnemonicParsing="false" onAction="#out" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: 'red'; -fx-background-radius: 20;" text="Cerrar sesion" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <VBox layoutX="-1.0" layoutY="152.0" prefHeight="571.0" prefWidth="262.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label prefHeight="30.0" prefWidth="252.0" text="PROJECTS" textFill="#171717">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin>
+            </Label>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#regresar" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Home" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/projects.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Productos" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Productos" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/reliabilty.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Ventas" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/projections.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Proveedores" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Proveedores" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_Workflow_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Usuarios" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/agencies.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Corte_caja" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Corte de caja" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_US_Dollar_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#Reporte_ventas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Reporte de ventas" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_Share_64px.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </VBox>
+      <TableView fx:id="ProductosVenta" layoutX="271.0" layoutY="265.0" prefHeight="456.0" prefWidth="370.0" />
+      <TextField fx:id="productoBuscar" layoutX="271.0" layoutY="216.0" prefHeight="25.0" prefWidth="211.0" promptText="Nombre del producto" />
+      <Button layoutX="541.0" layoutY="216.0" mnemonicParsing="false" onAction="#buscarProductos" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #1F8FE8; -fx-background-radius: 20;" text="Buscar" textFill="WHITE" />
+      <TableView fx:id="productoVenta" layoutX="667.0" layoutY="265.0" prefHeight="353.0" prefWidth="577.0" />
+      <TextField fx:id="iva" editable="false" layoutX="731.0" layoutY="645.0" prefHeight="25.0" prefWidth="101.0" />
+      <TextField fx:id="subtotal" editable="false" layoutX="935.0" layoutY="645.0" prefHeight="25.0" prefWidth="112.0" />
+      <Label layoutX="675.0" layoutY="649.0" prefHeight="17.0" prefWidth="41.0" text="IVA" />
+      <Label layoutX="849.0" layoutY="649.0" text="SUBTOTAL" />
+      <Label layoutX="1071.0" layoutY="649.0" text="TOTAL" />
+      <TextField fx:id="total" editable="false" layoutX="1124.0" layoutY="645.0" prefHeight="25.0" prefWidth="112.0" />
+      <Button layoutX="1132.0" layoutY="696.0" mnemonicParsing="false" onAction="#generarCompra" style="-fx-background-color: #1F8FE8; -fx-background-radius: 20;" text="Generar Compra" textFill="WHITE" />
+      <TextField fx:id="productoVender" editable="false" layoutX="743.0" layoutY="216.0" prefHeight="25.0" prefWidth="112.0" />
+      <TextField fx:id="cantidadVender" layoutX="956.0" layoutY="216.0" prefHeight="25.0" prefWidth="112.0" />
+      <Button layoutX="1125.0" layoutY="216.0" mnemonicParsing="false" onAction="#ingresarProductosVender" style="-fx-background-color: #1F8FE8; -fx-background-radius: 20;" text="Ingresar Producto" textFill="WHITE" />
+      <Label layoutX="675.0" layoutY="220.0" text="Producto" />
+      <Label layoutX="878.0" layoutY="220.0" text="Cantidad" />
+      <Label layoutX="667.0" layoutY="697.0" text="Cambio" />
+      <TextField fx:id="cambioVenta" layoutX="731.0" layoutY="693.0" prefHeight="25.0" prefWidth="101.0" />
+      <TextField fx:id="precioUniVender" editable="false" layoutX="743.0" layoutY="172.0" prefHeight="25.0" prefWidth="112.0" visible="false" />
+      <TextField fx:id="Descripcionvender" editable="false" layoutX="956.0" layoutY="172.0" prefHeight="25.0" prefWidth="112.0" visible="false" />
+      <TextField fx:id="idVender" editable="false" layoutX="869.0" layoutY="172.0" prefHeight="25.0" prefWidth="67.0" visible="false" />
+      <TextField fx:id="devoluciónVenta" editable="false" layoutX="935.0" layoutY="693.0" prefHeight="25.0" prefWidth="112.0" />
+      <Label layoutX="849.0" layoutY="697.0" text="Devolución" />
+      <TextField fx:id="cantidadProductoVenta" editable="false" layoutX="707.0" layoutY="140.0" visible="false" />
    </children>
 </AnchorPane>
