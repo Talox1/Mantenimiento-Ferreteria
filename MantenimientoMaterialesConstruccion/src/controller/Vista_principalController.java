@@ -85,6 +85,7 @@ public class Vista_principalController implements Initializable {
 
     @FXML
     void Corte_caja(ActionEvent event) throws IOException {
+        
         Stage stage = new Stage();
         FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/CorteCaja.fxml"));
         Object carga = loader.load();
@@ -94,13 +95,14 @@ public class Vista_principalController implements Initializable {
         controller.informacion(person);
         stage.setScene(scene);
         stage.show();                                                                   
-        Stage stage1 = (Stage) Corte.getScene().getWindow();
+        Stage stage1 = (Stage) productosMenores.getScene().getWindow();
         stage1.close();
 
     }
 
     @FXML
     void Productos(ActionEvent event) throws IOException {
+        System.out.println("Productos");
         Stage stage = new Stage();
         FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/Productos.fxml"));
         Object carga = loader.load();
@@ -110,7 +112,7 @@ public class Vista_principalController implements Initializable {
         controller.informacion(person);
         stage.setScene(scene);
         stage.show();                                                                   
-        Stage stage1 = (Stage) Corte.getScene().getWindow();
+        Stage stage1 = (Stage) productosMenores.getScene().getWindow();
         stage1.close();
     }
 
@@ -125,7 +127,7 @@ public class Vista_principalController implements Initializable {
         controller.informacion(person);
         stage.setScene(scene);
         stage.show();                                                                   
-        Stage stage1 = (Stage) Corte.getScene().getWindow();
+        Stage stage1 = (Stage) productosMenores.getScene().getWindow();
         stage1.close();
     }
     
@@ -141,7 +143,7 @@ public class Vista_principalController implements Initializable {
         controller.informacion(person);
         stage.setScene(scene);
         stage.show();                                                                   
-        Stage stage1 = (Stage) Corte.getScene().getWindow();
+        Stage stage1 = (Stage) productosMenores.getScene().getWindow();
         stage1.close();
     }
 
@@ -156,7 +158,7 @@ public class Vista_principalController implements Initializable {
         controller.informacion(person);
         stage.setScene(scene);
         stage.show();                                                                   
-        Stage stage1 = (Stage) Corte.getScene().getWindow();
+        Stage stage1 = (Stage) productosMenores.getScene().getWindow();
         stage1.close();
     }
 
@@ -171,7 +173,7 @@ public class Vista_principalController implements Initializable {
         controller.informacion(person);
         stage.setScene(scene);
         stage.show();                                                                   
-        Stage stage1 = (Stage) Corte.getScene().getWindow();
+        Stage stage1 = (Stage) productosMenores.getScene().getWindow();
         stage1.close();
     }
 
@@ -190,7 +192,7 @@ public class Vista_principalController implements Initializable {
             LoginController controller = loader.<LoginController>getController();            
             stage.setScene(scene);
             stage.show();                                                                   
-            Stage stage1 = (Stage) Corte.getScene().getWindow();
+            Stage stage1 = (Stage) productosMenores.getScene().getWindow();
             stage1.close();
         person.setNombre("");
         person.setRol("");
