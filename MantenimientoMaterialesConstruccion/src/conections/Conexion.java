@@ -17,14 +17,7 @@ public class Conexion {
     public Connection conexion(){        
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            
-            
-            String dbName = "farmacia1";
-            String dbUserName = "root";
-            String dbPassword = "1234";
-            String connectionString = "jdbc:mysql://127.0.0.1:3307/" + dbName + "?user=" + dbUserName + "&password=" + dbPassword + "&useUnicode=true&characterEncoding=UTF-8";
-            
-            conectar = DriverManager.getConnection(connectionString);
+            conectar = DriverManager.getConnection("jdbc:mysql://localhost/farmacia","root","");
             System.out.println("conectado");
             //JOptionPane.showMessageDialog(null,"conectado");
         }catch(Exception e){
@@ -34,5 +27,8 @@ public class Conexion {
         }
         return conectar;
     }
-    
+    public static void main(String[] args){
+        Conexion cc = new Conexion();
+        Connection cn = cc.conexion();
+    }
 }   

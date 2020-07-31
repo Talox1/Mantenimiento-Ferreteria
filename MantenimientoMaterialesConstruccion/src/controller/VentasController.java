@@ -10,7 +10,6 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import conections.Conexion;
-import static controller.Vista_principalController.Fecha;
 import far_system.LoginController;
 import java.awt.Desktop;
 import java.io.File;
@@ -54,10 +53,7 @@ import model.Venta_productos;
 import java.io.File;
 import java.util.Optional;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextInputDialog;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -82,32 +78,14 @@ public class VentasController implements Initializable {
     @FXML    private TextField devoluciónVenta;
     @FXML    private TextField cantidadProductoVenta;
 
-    @FXML    private Label DateTime;
-    @FXML    private Label Name;
-    @FXML    private Label Rol;
-    @FXML    private Button Productos;
-    @FXML    private Button Usuarios;
-    @FXML    private Button Provedores;
-    @FXML    private Button Ventas;
-    @FXML    private Button reporteVen;
-    @FXML    private Button Corte;
-    @FXML    private Button Cambio;
-    
-    @FXML    private ImageView image;
     @FXML    private Button regresar;
     Person_system person;
-    String nombre;
-    String rol;
-    String user;   
-    float cambio;
-    private ObservableList<ObservableList> data;
-    
     
     @FXML    private TableView ProductosVenta;
     @FXML    private TableView productoVenta;
     private Conexion cc = new Conexion();
     private Connection cn= cc.conexion();   
-    
+    private ObservableList<ObservableList> data;
     private ObservableList<ObservableList> data1;
     Venta_productos ventasGen;
     String hora;
@@ -122,134 +100,8 @@ public class VentasController implements Initializable {
         hora = Hora();
         visualizateData();
         visualizateData1();
-        DateTime.setText(Fecha());
-        visualizateData();
     }
     boolean salir = false;
-    
-
-    @FXML
-    void Corte_caja(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/CorteCaja.fxml"));
-        Object carga = loader.load();
-        Parent root = (Parent) carga;
-        Scene scene = new Scene(root);            
-        CorteCajaController controller = loader.<CorteCajaController>getController();
-        controller.informacion(person);
-        stage.setScene(scene);
-        stage.show();                                                                   
-        Stage stage1 = (Stage) Corte.getScene().getWindow();
-        stage1.close();
-
-    }
-
-    @FXML
-    void Productos(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/Productos.fxml"));
-        Object carga = loader.load();
-        Parent root = (Parent) carga;
-        Scene scene = new Scene(root);            
-        ProductosController controller = loader.<ProductosController>getController();
-        controller.informacion(person);
-        stage.setScene(scene);
-        stage.show();                                                                   
-        Stage stage1 = (Stage) Corte.getScene().getWindow();
-        stage1.close();
-    }
-
-    @FXML
-    void Proveedores(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/Proveedores.fxml"));
-        Object carga = loader.load();
-        Parent root = (Parent) carga;
-        Scene scene = new Scene(root);            
-        ProveedoresController controller = loader.<ProveedoresController>getController();
-        controller.informacion(person);
-        stage.setScene(scene);
-        stage.show();                                                                   
-        Stage stage1 = (Stage) Corte.getScene().getWindow();
-        stage1.close();
-    }
-    
-    
-    @FXML
-    void Reporte_ventas(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/ReportesVenta.fxml"));
-        Object carga = loader.load();
-        Parent root = (Parent) carga;
-        Scene scene = new Scene(root);            
-        ReportesVentaController controller = loader.<ReportesVentaController>getController();
-        controller.informacion(person);
-        stage.setScene(scene);
-        stage.show();                                                                   
-        Stage stage1 = (Stage) Corte.getScene().getWindow();
-        stage1.close();
-    }
-
-    @FXML
-    void Usuarios(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/Usuarios.fxml"));
-        Object carga = loader.load();
-        Parent root = (Parent) carga;
-        Scene scene = new Scene(root);            
-        UsuariosController controller = loader.<UsuariosController>getController();
-        controller.informacion(person);
-        stage.setScene(scene);
-        stage.show();                                                                   
-        Stage stage1 = (Stage) Corte.getScene().getWindow();
-        stage1.close();
-    }
-
-    @FXML
-    void Ventas(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/Ventas.fxml"));
-        Object carga = loader.load();
-        Parent root = (Parent) carga;
-        Scene scene = new Scene(root);            
-        VentasController controller = loader.<VentasController>getController();
-        controller.informacion(person);
-        stage.setScene(scene);
-        stage.show();                                                                   
-        Stage stage1 = (Stage) Corte.getScene().getWindow();
-        stage1.close();
-    }
-
-    @FXML
-    void out(ActionEvent event) throws IOException {
-        Stage stage = new Stage();       
-        Alert dialogAlert2 = new Alert(Alert.AlertType.WARNING);
-        dialogAlert2.setTitle("Advertencia");
-        dialogAlert2.setContentText("Esta saliendo de la aplciación");
-        dialogAlert2.initStyle(StageStyle.UTILITY);
-        dialogAlert2.showAndWait();
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/far_system/Login.fxml"));
-            Object carga = loader.load();
-            Parent root = (Parent) carga;
-            Scene scene = new Scene(root);            
-            LoginController controller = loader.<LoginController>getController();            
-            stage.setScene(scene);
-            stage.show();                                                                   
-            Stage stage1 = (Stage) Corte.getScene().getWindow();
-            stage1.close();
-        person.setNombre("");
-        person.setRol("");
-        person.setUser("");
-    }
-    
-    
-     
-    public static String Fecha(){
-         Date fecha = new Date();
-         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-YYYY");
-         return formato.format(fecha);                  
-     }
-    
     @FXML
     void regresar(ActionEvent event) throws IOException {
         if(ventasPro.size() > 0){
@@ -315,14 +167,6 @@ public class VentasController implements Initializable {
     
     public void informacion(Person_system person){                
         this.person = person;
-        Name.setText(person.getNombre());
-        Rol.setText(person.getRol());
-        image.setImage(new Image("/img/Portada.jpg"));
-        if(rol.equals("Admin")){            
-        }else{
-            Usuarios.setVisible(false);
-            reporteVen.setVisible(false);
-        }
     }
         
     @FXML
@@ -816,7 +660,11 @@ public class VentasController implements Initializable {
         }
     }
     
-    
+    public static String Fecha(){
+         Date fecha = new Date();
+         SimpleDateFormat formato = new SimpleDateFormat("YYYY-MM-dd");
+         return formato.format(fecha);                  
+     }
     
     public static String Hora(){
         Date hora = new Date();

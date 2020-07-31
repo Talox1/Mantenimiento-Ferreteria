@@ -104,10 +104,8 @@ public class LoginController implements Initializable {
         System.out.println(password + user);
         String passDb = null;
         //select login.id, Nombre, Apellido_paterno, Apellido_materno, login.User,Rol from usuarios inner join login on usuarios.id = login.Usuarios_id where usuarios.id = 1
-        String sql = "SELECT login.id, Nombre, Apellido_paterno, Apellido_materno, login.User,Rol, login.Pasword FROM usuarios INNER JOIN login ON usuarios.id = login.Usuarios_id WHERE login.User =  '"+ user +"'";
-                  //sql = "SELECT Login.id, Nombre, Apellido_paterno, Apellido_materno, Login.User,Rol, Login.Pasword FROM Usuarios INNER JOIN Login ON Usuarios.id = Login.Usuarios_id WHERE Login.User =  '"+ user +"'";
+        String sql = "SELECT login.id, Nombre, Apellido_paterno, Apellido_materno, Login.User,Rol, login.Pasword FROM usuarios INNER JOIN login ON usuarios.id = login.Usuarios_id WHERE login.User =  '"+ user +"'";
         try {            
-            
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             System.out.println(rs);
@@ -120,7 +118,6 @@ public class LoginController implements Initializable {
                 Rol = rs.getString(6);
                 passDb = rs.getString(7);
             }            
-            
         } catch (SQLException e) {
             System.err.println("\nMe llevo la ");
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, e);            
